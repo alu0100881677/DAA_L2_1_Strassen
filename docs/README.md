@@ -4,6 +4,8 @@ Tradicionalmente, la multiplicación de matrices "a mano" se llevó siempre a ca
 
 El algoritmo de multiplicación de matrices tradicional tenía una complejidad de Θ($$ n^3 $$). El surgimiento de diversas técnicas de programación llevó al intento de lograr un algoritmo de una complejidad menor aplicando esas técnicas, pues el manejo de matrices es una parte fundamental de la informática. Por ejemplo, el tratamiento de imágenes, computacionalmente hablando, es el tratamiento de matrices de enormes dimensiones. 
 
+Para el conjunto de los algoritmos que vamos a mencionar en este documento, partimos del hecho de que las matrices son cuadradas y de lado igual a una potencia de dos, a fin de que se puedan dividir correctamente.
+
 ---
 
 ### La llegada de Divide y Vencerás
@@ -44,9 +46,11 @@ Product(MA, MB)
 Como vemos, este algoritmo efectivamente sigue las pautas marcadas por el paradigma de programación Divide y Vencerás. Sin embargo, no reduce la complejidad del algoritmo tradicional de multiplicación de matrices. En cada invocación recursiva, lleva a cabo ocho productos nuevos, y luego tiene que combinarlos. Esto último tiene una complejidad equivalente al número de entradas de la matriz, es decir, Θ($$ n^2 $$). Sabiendo que cada problema se divide en ocho subproblemas, y que cada subproblema reduce el tamaño de su padre a la mitad:
 
 	T(n) = Θ(1) 						si n = 1
-	T(n) = 8T(n/2) + Θ(n^2)				en el resto
+	T(n) = 8T(n/2) + Θ(n^2)			en el resto
 
 Por el método maestro, podemos afirmar que la complejidad de este algoritmo es Θ($$ n^3 $$), exactamente la misma que la del algoritmo tradicional. Por tanto, pese a aplicar las pautas de Divide y Vencerás, este algoritmo recursivo no supone una mejora. Esto llevó a pensar que no era posible diseñar un algoritmo de multiplicación de matrices con una complejidad menor.
+
+Cabe señalar que, de ahora en adelante, nos referiremos a este algoritmo como el **primer algoritmo recursivo**.
 
 Fue Volker Strassen en 1969 quien señaló que este enfoque tradicional definitivamente no era el óptimo. Aunque solo es ligeramente más rápido que el algoritmo estándar para la multiplicación de matrices, su artículo comenzó la búsqueda de algoritmos aún más rápidos, como el complejo algoritmo de Coppersmith–Winograd de Shmuel Winograd en 2010.
 
