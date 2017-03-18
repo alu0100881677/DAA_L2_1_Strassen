@@ -54,6 +54,6 @@ Cabe señalar que, de ahora en adelante, nos referiremos a este algoritmo como e
 
 Fue Volker Strassen en 1969 quien señaló que este enfoque tradicional definitivamente no era el óptimo. Aunque solo es ligeramente más rápido que el algoritmo estándar para la multiplicación de matrices, su artículo comenzó la búsqueda de algoritmos aún más rápidos, como el complejo algoritmo de Coppersmith–Winograd de Shmuel Winograd en 2010.
 
-¿Cómo logró Strassen hacer que la complejidad de su algoritmo fuera subcúbica? La razón principal radica en que, en cada nivel de recursividad, tan solo requiere de siete multiplicaciones. El resto de los aspectos del algoritmo tienen aproximadamente la misma complejidad, como el coste de combinar las submatrices. Más adelante, explicaremos todo esto con más detalles.
+¿Cómo logró Strassen hacer que la complejidad de su algoritmo fuera subcúbica? La razón principal radica en que, para cada subproblema, tan solo requiere de siete multiplicaciones. El resto de los aspectos del algoritmo tienen aproximadamente la misma complejidad, como el coste de combinar las submatrices. Más adelante, explicaremos todo esto con más detalles.
 
 ---
