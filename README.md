@@ -3,6 +3,8 @@ El algoritmo de multiplicación de matrices conocido como el algoritmo de Strass
 
 Este trabajo está pensado para llevar a cabo una presentación de este algoritmo, mostrando todas sus virtudes y lo que supuso para este entorno. Se lleva a cabo un análisis detallado de su complejidad y se implementa en el lenguaje de programación Java, tanto el propio de Strassen como un algoritmo tradicional alternativo. El objetivo de implementar ambos algoritmos es el de comparar el número de pasos que tiene que llevar a cabo cada uno, y así mostrar la mejoría en los resultados que provoca la utilización del algoritmo de Strassen.
 
+En las [GitHub Pages]() de este repositorio se ha elaborado un completo informe con toda la información anteriormente mencionada. 
+
 El trabajo ha sido realizado por:
 
 * [Óscar Darias Plasencia](https://alu0100892833.github.io), alu0100892833
