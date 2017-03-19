@@ -1,4 +1,4 @@
-##Instrucciones de uso
+## Instrucciones de uso
 
 Ejecutar **java TestStrassen nombrematriz nombrematriz  0 | 1 [ficherosalida]** 
 
