@@ -4,6 +4,6 @@
 
 * [Introducción](README.md)
 * [Explicación del algoritmo](Strassen.md)
-* [(graficas de edu)]()
+* [Comparativa gráfica](Comparativa.md)
 * [Conclusiones](Conclusiones.md)
 * [Bibliografía](Referencias.md)

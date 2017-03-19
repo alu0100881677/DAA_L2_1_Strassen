@@ -85,17 +85,17 @@ Nos queda saber el tiempo necesario para fusionar las soluciones parciales (subm
 
 Sabiendo todo esto, y que los casos base tratan simplemente de multiplicar, sumar y restar números, y no matrices, podemos formar la fórmula de recurrencia del algoritmo de Strassen:
 
-* Número de subproblemas por cada problema: **a = 8**.
+* Número de subproblemas por cada problema: **a = 7**.
 * Tamaño de cada subproblema: **b = n/2**.
 * Tiempo invertido en dividir las matrices: **D(n) = Θ(1)**. Esto es despreciable frente a C(n).
 * Tiempo invertido en fusionar las submatrices: **C(n) = Θ($$ n^2 $$)**.
 
 ``` 
 T(n) = Θ(1) 						si n = 1
-T(n) = 8T(n/2) + Θ(n^2)			en el resto 
+T(n) = 7T(n/2) + Θ(n^2)			en el resto 
 ```
 
-Por el método maestro, podríamos concluir de inmediato que la complejidad de este algoritmo es subcúbica. El valor de a (8) es mayor que el valor de $$ b^d (2^2 = 4) $$, y por tanto estamos ante el tercer caso que contempla el método maestro. La complejidad de este algoritmo es Θ($$ n^{log_27} $$). Puesto que el valor del $$ log_27 $$ está entre 2.80 y 2.81, concluimos que la complejidad es Θ($$ n^{2.81} $$).
+Por el método maestro, podríamos concluir de inmediato que la complejidad de este algoritmo es subcúbica. El valor de a (7) es mayor que el valor de $$ b^d (2^2 = 4) $$, y por tanto estamos ante el tercer caso que contempla el método maestro. La complejidad de este algoritmo es Θ($$ n^{log_27} $$). Puesto que el valor del $$ log_27 $$ está entre 2.80 y 2.81, concluimos que la complejidad es Θ($$ n^{2.81} $$).
 
 ---
 
