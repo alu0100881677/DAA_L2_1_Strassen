@@ -1,0 +1,326 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introducción · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Strassen.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Capítulos</li>
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Strassen.html">
+            
+                <a href="Strassen.html">
+            
+                    
+                    Explicación del algoritmo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Comparativa.html">
+            
+                <a href="Comparativa.html">
+            
+                    
+                    Comparativa gráfica
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Conclusiones.html">
+            
+                <a href="Conclusiones.html">
+            
+                    
+                    Conclusiones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Referencias.html">
+            
+                <a href="Referencias.html">
+            
+                    
+                    Bibliografía
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introducción</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="el-algoritmo-de-strassen">EL ALGORITMO DE STRASSEN</h2>
+<p>Tradicionalmente, la multiplicaci&#xF3;n de matrices &quot;a mano&quot; se llev&#xF3; siempre a cabo multiplicando y sumando los elementos de cada fila y cada columna, obteniendo el valor de aquel elemento que perteneciera a la fila y a la columna en cuesti&#xF3;n. As&#xED;, el elemento en la posici&#xF3;n (2, 3) de una matriz resultado, se obten&#xED;a multiplicando cada elemento de la fila 2 del multiplicando por cada elemento de la columna 3 del multiplicador, y sum&#xE1;ndolos. Nunca hubo ning&#xFA;n problema con este algoritmo hasta la llegada de las ciencias de la computaci&#xF3;n, y la b&#xFA;squeda por encontrar el algoritmo m&#xE1;s r&#xE1;pido posible, es decir, un algoritmo de menor complejidad.</p>
+<p>El algoritmo de multiplicaci&#xF3;n de matrices tradicional ten&#xED;a una complejidad de &#x398;(<script type="math/tex; "> n^3 </script>). El surgimiento de diversas t&#xE9;cnicas de programaci&#xF3;n llev&#xF3; al intento de lograr un algoritmo de una complejidad menor aplicando esas t&#xE9;cnicas, pues el manejo de matrices es una parte fundamental de la inform&#xE1;tica. Por ejemplo, el tratamiento de im&#xE1;genes, computacionalmente hablando, es el tratamiento de matrices de enormes dimensiones. </p>
+<p>Para el conjunto de los algoritmos que vamos a mencionar en este documento, partimos del hecho de que las matrices son cuadradas y de lado igual a una potencia de dos, a fin de que se puedan dividir correctamente.</p>
+<hr>
+<h3 id="la-llegada-de-divide-y-vencer&#xE1;s">La llegada de Divide y Vencer&#xE1;s</h3>
+<p>En la cultura popular, divide y vencer&#xE1;s hace referencia a un refr&#xE1;n que implica resolver un problema dif&#xED;cil dividi&#xE9;ndolo en partes tan simples tantas veces como sea necesario, hasta que la soluci&#xF3;n de las partes se torna obvia. La soluci&#xF3;n del problema principal se construye a partir de las soluciones encontradas. </p>
+<p>Esta misma t&#xE9;cnica trat&#xF3; de aplicarse al campo de los algoritmos, cobrando much&#xED;sima importancia en el mismo a mediados del siglo XX, aunque ya siglos antes se hab&#xED;a aplicado esta t&#xE9;cnica para resolver algunos algoritmos matem&#xE1;ticos &quot;a mano&quot;. El m&#xE9;todo se basaba en la resoluci&#xF3;n recursiva de un problema dividi&#xE9;ndolo en dos o m&#xE1;s subproblemas de igual tipo o similar. El proceso contin&#xFA;a hasta que &#xE9;stos llegan a ser lo suficientemente sencillos como para que se resuelvan directamente. Al final, las soluciones a cada uno de los subproblemas se combinan para dar una soluci&#xF3;n al problema original.</p>
+<p>Esta t&#xE9;cnica trat&#xF3; de aplicarse a la multiplicaci&#xF3;n de matrices. Se divid&#xED;an el multiplicando y el multiplicador en submatrices de forma sucesiva, hasta que estas fueran lo suficientemente peque&#xF1;as como para resolverse de manera sencilla. Luego, empezaban a combinarse hasta obtener el producto final. El algoritmo en cuesti&#xF3;n es el siguiente:</p>
+<pre><code>Product(MA, MB)
+
+    ad_hoc         // Caso base cuando las matrices tienen tama&#xF1;o 2 x 2
+        // Las matrices se dividen en cuatro n&#xFA;meros cada una
+        R11 = MA11 * MB11 + MA12 * MB21
+        R12 = MA11 * MB12 + MA12 * MB22
+        R21 = MA21 * MB11 + MA22 * MB21
+        R22 = MA21 * MB12 + MA22 * MB22
+        R = fusion(R11, R12, R21, R22)
+        return R
+
+    else            // Resto de casos
+        // Las matrices se dividen en cuatro submatrices cada una
+        A = sub(MA, 11)        E = sub(MB, 11)
+        B = sub(MA, 12)        F = sub(MB, 12)
+        C = sub(MA, 21)        G = sub(MB, 21)
+        D = sub(MA, 22)        H = sub(MB, 22)
+        // Operamos con las submatrices
+        R11 = AE + BG
+        R12 = AF + BH
+        R21 = CE + DG
+        R22 = CF + DH
+        R = fusion(R11, R12, R21, R22)
+        return R
+</code></pre><p>Como vemos, este algoritmo efectivamente sigue las pautas marcadas por el paradigma de programaci&#xF3;n Divide y Vencer&#xE1;s. Sin embargo, no reduce la complejidad del algoritmo tradicional de multiplicaci&#xF3;n de matrices. En cada invocaci&#xF3;n recursiva, lleva a cabo ocho productos nuevos, y luego tiene que combinarlos. Esto &#xFA;ltimo tiene una complejidad equivalente al n&#xFA;mero de entradas de la matriz, es decir, &#x398;(<script type="math/tex; "> n^2 </script>). Sabiendo que cada problema se divide en ocho subproblemas, y que cada subproblema reduce el tama&#xF1;o de su padre a la mitad:</p>
+<pre><code>T(n) = &#x398;(1)                         si n = 1
+T(n) = 8T(n/2) + &#x398;(n^2)            en el resto
+</code></pre><p>Por el m&#xE9;todo maestro, podemos afirmar que la complejidad de este algoritmo es &#x398;(<script type="math/tex; "> n^3 </script>), exactamente la misma que la del algoritmo tradicional. Por tanto, pese a aplicar las pautas de Divide y Vencer&#xE1;s, este algoritmo recursivo no supone una mejora. Esto llev&#xF3; a pensar que no era posible dise&#xF1;ar un algoritmo de multiplicaci&#xF3;n de matrices con una complejidad menor.</p>
+<p>Cabe se&#xF1;alar que, de ahora en adelante, nos referiremos a este algoritmo como el <strong>primer algoritmo recursivo</strong>.</p>
+<p>Fue Volker Strassen en 1969 quien se&#xF1;al&#xF3; que este enfoque tradicional definitivamente no era el &#xF3;ptimo. Aunque solo es ligeramente m&#xE1;s r&#xE1;pido que el algoritmo est&#xE1;ndar para la multiplicaci&#xF3;n de matrices, su art&#xED;culo comenz&#xF3; la b&#xFA;squeda de algoritmos a&#xFA;n m&#xE1;s r&#xE1;pidos, como el complejo algoritmo de Coppersmith&#x2013;Winograd de Shmuel Winograd en 2010.</p>
+<p>&#xBF;C&#xF3;mo logr&#xF3; Strassen hacer que la complejidad de su algoritmo fuera subc&#xFA;bica? La raz&#xF3;n principal radica en que, para cada subproblema, tan solo requiere de siete multiplicaciones. El resto de los aspectos del algoritmo tienen aproximadamente la misma complejidad, como el coste de combinar las submatrices. M&#xE1;s adelante, explicaremos todo esto con m&#xE1;s detalles.</p>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Strassen.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Explicación del algoritmo">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introducción","level":"1.1","depth":1,"next":{"title":"Explicación del algoritmo","level":"1.2","depth":1,"path":"Strassen.md","ref":"Strassen.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-03-20T10:24:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-20T10:26:05.909Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
